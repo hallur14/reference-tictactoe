@@ -1,0 +1,19 @@
+on: '2'
+services:
+  server:
+    environment:
+      - 'REDIS_HOST=postgres'
+      - 'REDIS_PORT=6379'
+      - 'PORT=3000'
+    image: 'into-docker'
+    build:
+      context: '.'
+      dockerfile: 'Dockerfile'
+    ports:
+      - '3000:3000'
+    links:
+      - 'postgres'
+  redis:
+    image: postgres
+    ports:
+      - "6379:6379"
