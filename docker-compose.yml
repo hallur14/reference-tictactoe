@@ -1,0 +1,19 @@
+version: '2'
+services:
+  server:
+    environment:
+      - 'PGHOST=postgres'
+      - 'PGPORT=5432'
+      - 'PORT=3000'
+    image: 'hallur14/tictactoe' 
+    ports:
+      - '3000:3000'
+      - '8080:8080'
+    depends_on:
+      - postgres
+  postgres:
+    environment:
+      - POSTGRES_PASSWORD=mysecretpassword
+    image: postgres
+    ports:
+      - "5432:5432"
