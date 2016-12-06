@@ -45,6 +45,7 @@ cp ./Dockerfile ./build/
 
 cp ./package.json ./build/
 
+cp ./start.sh ./build
 cd build
 echo Building docker image
 
