@@ -12,6 +12,8 @@ fi
 # Remove .git from url in order to get https link to repo (assumes https url for GitHub)
 export GITHUB_URL=$(echo $GIT_URL | rev | cut -c 5- | rev)
 
+# Create environment file for docker
+echo "GIT_COMMIT=$(echo $GIT_COMMIT)" > .env
 
 echo Building app
 npm run build
@@ -65,4 +67,6 @@ if [[ $rc != 0 ]] ; then
     exit $rc
 fi
 
-echo "Done"
+scp -i ./../Keys/hallur14key.pem .env ec1-user@ec2-54-214-80-23.us-west-2.compute.amazonaws.com:
+
+echo "Done
