@@ -15,9 +15,13 @@ export GITHUB_URL=$(echo $GIT_URL | rev | cut -c 5- | rev)
 # Create environment file for docker
 echo "GIT_COMMIT=$(echo $GIT_COMMIT)" > .env
 
-echo Building app
+npm install --silent
+cd client
+npm install --silent
+cd ..
 npm run build
 
+echo Building app
 rc=$?
 if [[ $rc != 0 ]] ; then
     echo "Npm build failed with exit code " $rc
