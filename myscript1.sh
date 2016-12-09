@@ -74,4 +74,4 @@ fi
 
 scp -i ./../Keys/hallur14key.pem .env ec1-user@ec2-54-214-80-23.us-west-2.compute.amazonaws.com:
 
-echo "Done
+echo Done
