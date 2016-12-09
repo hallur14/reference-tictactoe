@@ -56,7 +56,7 @@ cp ./start.sh ./build
 cd build
 echo Building docker image
 
-sudo docker build -t hallur14/tictactoe .
+docker build -t hallur14/tictactoe .
 
 
 rc=$?
@@ -65,7 +65,7 @@ if [[ $rc != 0 ]] ; then
     exit $rc
 fi
 
-sudo docker push hallur14/tictactoe 
+docker push hallur14/tictactoe 
 rc=$?
 if [[ $rc != 0 ]] ; then
     echo "Docker push failed " $rc
