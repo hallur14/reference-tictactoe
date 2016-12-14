@@ -1,5 +1,7 @@
 #!/bin/bash
 
+#testing 123
+
 echo Cleaning...
 rm -rf ./build
 
