@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#testing 123456789
+#testing 1
 
 echo Cleaning...
 rm -rf ./build
