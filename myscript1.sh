@@ -1,7 +1,5 @@
 #!/bin/bash
 
-#testing 1
-
 echo Cleaning...
 rm -rf ./build
 
@@ -75,6 +73,12 @@ if [[ $rc != 0 ]] ; then
 fi
 
 scp -i ./../Keys/hallur14key.pem .env ec1-user@ec2-54-214-80-23.us-west-2.compute.amazonaws.com:
+
+echo moving .env and .yml files
+scp -o StrictHostKeyChecking=no -i "~/hallur14key.pem" ./docker-compose.yml ec2-user@ec2-54-214-80-23.us-west-2.compute.amazonaws.com:~/docker-compose.yml
+
+scp -o StrictHostKeyChecking=no -i "~/hallur14key.pem" ./.env ec2-user@ec2-54-214-80-23.us-west-2.compute.amazonaws.com:~/.env
+
 
 
 echo Ran Build Script successfully
