@@ -15,7 +15,7 @@ module.exports=function(injected){
 
                 var statement = 'DELETE FROM eventlog';
                 var statementParams = [];
-                console.debug(statement);
+                console.warn(statement);
                 connection.query(statement,statementParams, function(err, result) {
                     //call `done()` to release the client back to the pool
                     if(err) {
@@ -26,7 +26,6 @@ module.exports=function(injected){
                 });
 
                 statement = "DELETE FROM commandlog";
-                console.debug(statement);
                 connection.query(statement,statementParams, function(err, result) {
                     //call `done()` to release the client back to the pool
                     done();

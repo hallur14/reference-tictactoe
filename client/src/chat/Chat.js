@@ -1,5 +1,6 @@
 import React from 'react';
 import _ from 'lodash';
+import './Chat.css';
 
 export default function(injected){
 
@@ -23,9 +24,6 @@ export default function(injected){
             this.unsentMessageChanged = this.unsentMessageChanged.bind(this);
         }
         sendChatMessage(){
-//            console.debug("Sending command message on command port ", this.state.unsentMessage);
-//            socket.emit('issueCommand', );
-
             var cmdId = generateUUID();
             commandPort.routeMessage({commandId:cmdId, type:"chatCommand", message: this.state.unsentMessage });
         }

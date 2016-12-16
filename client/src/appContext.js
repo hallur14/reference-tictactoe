@@ -8,6 +8,8 @@ import ConnectedUsersModule from 'status/ConnectedUsers';
 import ChatModule from 'chat/Chat';
 import RoutingContext from './routing-context';
 
+import TictacToeContext from './tictactoe/tictactoe-context';
+
 function appContext(injected){
     const io = injected('io');
     const env = injected('env');
@@ -27,11 +29,19 @@ function appContext(injected){
         generateUUID: generateUUID
     }));
 
+    const {TictactoeGame} = TictacToeContext(inject({
+        eventRouter,
+        commandRouter,
+        queryRouter,
+        socket
+    }));
+
     const App = AppModule(inject({
         io,
         ConnectedClients,
         ConnectedUsers,
         Chat,
+        TictactoeGame,
         socket,
         eventRouter
     }));

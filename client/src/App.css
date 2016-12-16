@@ -1,24 +1,67 @@
 .App {
-    text-align: center;
+    height: 100%;
 }
 
 .App-logo {
     animation: App-logo-spin infinite 20s linear;
-    height: 80px;
+    height: 50px;
 }
 
 .App-header {
     background-color: #222;
-    height: 150px;
+    height: 60px;
     padding: 20px;
     color: white;
+
+}
+
+.devMode{
+    padding: 5px;
+}
+
+.App-body{
+    position: relative;
+    width: 100%;
+}
+
+.App-body .App-left-column{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 240px;
+}
+
+.App-body .App-container{
+
+    position: relative;
+    margin-left: 250px;
+    padding: 20px;
+    height:100%;
+
+}
+
+
+.App-header div{
+    display: inline-block;
+
+    vertical-align: middle;
+}
+
+.App-header-right{
+    float: right;
+    padding: 0 10px 0 10px;
 }
 
 .App-footer {
-    width:100%;
-    text-align: center;
     position: absolute;
+    right: 0;
     bottom: 0;
+    left: 0;
+    padding: 1rem;
+    background-color: #efefef;
+    text-align: center;
+
 }
 
 .App-intro {

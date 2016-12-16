@@ -46,7 +46,6 @@ export default function (injected) {
             socket.on('usersConnected', (users)=> {
                 this.setState({users: users});
             });
-
         }
         userNameChanged(event){
             socket.emit('changeUserName',{userName:event.target.value})

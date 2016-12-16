@@ -1,4 +1,4 @@
-## Application base for HGOP 2016 Student project
+## Application SOLUTION for HGOP 2016 Student project
 
 Global installation requirements:
 
@@ -78,6 +78,19 @@ npm run loadtest
 ```
 
 
+To build and deploy new version in a new ec2 instance on amazon:
+
+```
+./dockerbuild.sh
+
+export GIT_COMMIT= <git hash used to tag your container>
+
+cd provision
+./provision-new-environment.sh
+```
+
+
+
 ## Notes
 
 The main emphasis in this sample application is on object decomposition and testability, achieved with fine-grained
@@ -89,3 +102,7 @@ achieving near-linear scaling of servers in clustered environments is a concern.
 Note that transaction support, error handling and logging are incomplete, and many other details that would be required in
 production-ready clustered applications are not present. One such is persistent user sessions.
 
+
+## Links
+
+http://docs.aws.amazon.com/cli/latest/userguide/cli-ec2-launch.html

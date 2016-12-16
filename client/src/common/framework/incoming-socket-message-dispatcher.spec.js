@@ -5,6 +5,7 @@ describe('socket message dispatcher', function(){
     var messageDispatcher;
     var router;
     var session;
+    var subscription;
 
     beforeEach(function(){
 
@@ -31,10 +32,10 @@ describe('socket message dispatcher', function(){
                 socketIoVerb:'issueCommand',
                 messageRouter: router
             }));
-        messageDispatcher.startDispatching(socket, session);
+        subscription = messageDispatcher.startDispatching(socket, session);
     });
 
-    fit('should subscribe to commandIssued messages',function(){
+    it('should subscribe to commandIssued messages',function(){
         expect(socket._subscriptions['issueCommand']).toBeTruthy();
     });
 
@@ -52,7 +53,7 @@ describe('socket message dispatcher', function(){
     });
 
     it('should remove socket listener when stop dispatching called.',function(){
-        messageDispatcher.stopDispatching();
+        subscription.stopDispatching();
         expect(socket._subscriptions['issueCommand']).toBeFalsy();
 
     });

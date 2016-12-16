@@ -34,7 +34,7 @@ module.exports=function(injected){
         repo.storeCommand(commandObj, function(err){
             console.error('Error storing command object: ' + err)
         }, function(){
-            console.debug('Command stored');
+            // Success...do nothing
         })
     });
 

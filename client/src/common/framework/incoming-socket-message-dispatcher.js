@@ -10,7 +10,7 @@ module.exports=function(injected){
             var listener;
             listener = (message)=>{
                 message._session = session;
-                console.debug("Incoming message from socket.io: " + socketIoVerb + " message: ", message );
+                //console.debug("Incoming message from socket.io: " + socketIoVerb + " message: ", message );
                 messageRouter.routeMessage(message);
             };
 

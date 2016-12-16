@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default function (injected) {
-    var title = injected('title');
+    var title = injected('title', true) || 'FAKE';
 
     var renderedProps = [];
     var FakeView = React.createClass({
