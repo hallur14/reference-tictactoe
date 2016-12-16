@@ -38,7 +38,7 @@ _EOF_
 
 echo creating .env file
 cat > ./.env << _EOF_
-$GIT_COMMIT=$GIT_COMMIT
+GIT_COMMIT=$GIT_COMMIT
 _EOF_
 
 mkdir ./build/public/
@@ -64,7 +64,7 @@ cp ./start.sh ./build
 cd build
 echo Building docker image
 
-docker build -t hallur14/tictactoe .
+docker build -t hallur14/tictactoe:$GIT_COMMIT .
 
 
 rc=$?
@@ -73,7 +73,7 @@ if [[ $rc != 0 ]] ; then
     exit $rc
 fi
 
-docker push hallur14/tictactoe 
+docker push hallur14/tictactoe:$GIT_COMMIT 
 rc=$?
 if [[ $rc != 0 ]] ; then
     echo "Docker push failed " $rc
