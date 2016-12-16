@@ -1,5 +1,6 @@
 #!/bin/bash
 
+echo Starting
 echo Cleaning...
 rm -rf ./build
 
