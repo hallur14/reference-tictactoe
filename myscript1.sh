@@ -73,6 +73,7 @@ if [[ $rc != 0 ]] ; then
     exit $rc
 fi
 
+cd ..
 
 echo moving .env and .yml files
 scp -o StrictHostKeyChecking=no -i "~/hallur14key.pem" ./docker-compose.yml ec2-user@ec2-54-214-80-23.us-west-2.compute.amazonaws.com:~/docker-compose.yml
